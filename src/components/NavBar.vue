@@ -1,13 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-light justify-content-between nsg">
-      <a
-        href="#"
-        class="miz"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
-        @keyup.65="doSomething"
-      >
+      <a href="#" class="miz" @keyup.65="doSomething" @keyup.72="toggleModal">
         <img src="https://img.icons8.com/material/50/000000/help--v2.png" />
         <Accessability />
       </a>
@@ -31,55 +25,30 @@
         </a>
       </form>
     </nav>
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Modal v-if="isOpen" @close="isOpen = false" />
   </div>
 </template>
 
 <script>
 import Accessability from '@/components/Accessability.vue'
+import Modal from '@/components/Modal.vue'
 export default {
+  data() {
+    return {
+      isOpen: true
+    }
+  },
   components: {
-    Accessability
+    Accessability,
+    Modal
   },
   methods: {
     doSomething() {
       console.log('Your pressed a!')
+    },
+    toggleModal() {
+      this.isOpen = !this.isOpen
+      console.log('Your pressed h!')
     }
   }
 }
