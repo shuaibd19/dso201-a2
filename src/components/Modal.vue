@@ -2,29 +2,33 @@
   <div>
     <transition name="modal">
       <div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
-            <div class="modal-header">
-              <slot name="header">
-                default header
-              </slot>
+        <div class="content-inside">
+          <div class="lft-column">
+            <div class="imageRow">
+              <img src="@/assets/keyboard-shortcuts/h-help.png" alt="help" />
+              <p>Help</p>
             </div>
-
-            <div class="modal-body">
-              <slot name="body">
-                default body
-              </slot>
+            <div class="imageRow">
+              <img src="@/assets/keyboard-shortcuts/s-search.png" alt="searh" />
+              <p>Search</p>
             </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                default footer
-                <button class="modal-default-button" @click="$emit('close')">
-                  OK
-                </button>
-              </slot>
+            <div class="imageRow">
+              <img src="@/assets/keyboard-shortcuts/c-cart.png" alt="cart" />
+              <p>Cart</p>
+            </div>
+            <div class="imageRow">
+              <img
+                src="@/assets/keyboard-shortcuts/f-filter.png"
+                alt="filter"
+              />
+              <p>Filter Results</p>
+            </div>
+            <div class="imageRow">
+              <img src="@/assets/keyboard-shortcuts/e-email.png" alt="email" />
+              <p>Email</p>
             </div>
           </div>
+          <div class="rght-column">right</div>
         </div>
       </div>
     </transition>
@@ -38,53 +42,65 @@ export default {}
 <style scoped>
 .modal-mask {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9998;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
+  overflow: auto;
+  background-color: rgba(148, 45, 45, 0.712);
   transition: opacity 0.3s ease;
 }
 
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+.content-inside {
+  background-color: rgb(235, 226, 213);
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 40vh;
 }
 
-.modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+.rght-column {
+  /* background-color: cadetblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
 }
 
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
+.lft-column {
+  /* background-color: cyan; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  color: #5a3e10;
+  font-weight: bold;
+  padding: 5%;
 }
 
-.modal-body {
-  margin: 20px 0;
+.imageRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
 }
 
-.modal-default-button {
-  float: right;
+img {
+  height: 5vh;
 }
 
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
+p {
+  margin-top: auto;
+}
 
 .modal-enter {
   opacity: 0;

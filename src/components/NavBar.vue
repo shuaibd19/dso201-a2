@@ -1,7 +1,9 @@
 <template>
   <div>
+    <Keypress key-event="keyup" :key-code="72" @success="toggleModal" />
+    <Keypress key-event="keyup" :key-code="27" @success="isOpen = false" />
     <nav class="navbar navbar-light justify-content-between nsg">
-      <a href="#" class="miz" @keyup.65="doSomething" @keyup.72="toggleModal">
+      <a @click="toggleModal" href="#" class="miz">
         <img src="https://img.icons8.com/material/50/000000/help--v2.png" />
         <Accessability />
       </a>
@@ -35,17 +37,15 @@ import Modal from '@/components/Modal.vue'
 export default {
   data() {
     return {
-      isOpen: true
+      isOpen: false
     }
   },
   components: {
     Accessability,
-    Modal
+    Modal,
+    Keypress: () => import('vue-keypress')
   },
   methods: {
-    doSomething() {
-      console.log('Your pressed a!')
-    },
     toggleModal() {
       this.isOpen = !this.isOpen
       console.log('Your pressed h!')
