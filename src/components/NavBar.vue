@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar navbar-light justify-content-between nsg">
-    <a class="navbar-brand" href="#"
-      ><img
-        src="https://img.icons8.com/material/50/000000/help--v2.png"/><Accessability
-    /></a>
-    <a class="navbar-brand"
-      ><img class="logo" src="@/assets/brand.svg" alt="shuaibs_Shop"
-    /></a>
+    <a href="#" class="miz">
+      <img src="https://img.icons8.com/material/50/000000/help--v2.png" />
+      <Accessability />
+    </a>
+    <a class="navbar-brand">
+      <img class="logo" src="@/assets/brand.svg" alt="shuaibs_Shop" />
+    </a>
     <form class="form-inline">
       <input
         class="form-control mr-sm-2"
@@ -14,12 +14,10 @@
         placeholder="Search"
         aria-label="Search"
       />
-      <button class="btn btn-warning my-2 my-sm-0" type="submit">
-        Search
-      </button>
-      <a class="navbar-brand" href="#"
-        ><img src="https://img.icons8.com/windows/48/000000/shopping-bag.png"
-      /></a>
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+      <a class="navbar-brand" href="#">
+        <img src="https://img.icons8.com/windows/48/000000/shopping-bag.png" />
+      </a>
     </form>
   </nav>
 </template>
@@ -34,6 +32,9 @@ export default {
 </script>
 
 <style scoped>
+.miz {
+  text-decoration: none;
+}
 .logo {
   height: 5.5rem;
   /* max-height: 100px; */

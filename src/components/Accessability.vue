@@ -14,7 +14,11 @@ export default {}
 </script>
 
 <style scoped>
+.container {
+  color: black;
+}
 .jeej {
   font-weight: bolder;
+  color: black;
 }
 </style>
