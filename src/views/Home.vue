@@ -5,9 +5,14 @@
       <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
       <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
       <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-      <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+      <a href="#" class="email"><i class="fa fa-envelope"></i></a>
     </div>
-    <a href="https://icons8.com/icon/83361/help">Help icon by Icons8</a>
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+
+    <a class="thanks" href="https://icons8.com/icon/83361/help"
+      >Help icon by Icons8</a
+    >
   </div>
 </template>
 
@@ -33,7 +38,7 @@ export default {}
   padding: 16px;
   transition: all 0.3s ease;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* Style the social media icons with color, if you want */
@@ -43,6 +48,11 @@ export default {}
 
 .facebook {
   background: #3b5998;
+  color: white;
+}
+
+.email {
+  background: rgb(49, 46, 46);
   color: white;
 }
 
@@ -58,5 +68,14 @@ export default {}
 .youtube {
   background: #bb0000;
   color: white;
+}
+
+.thanks {
+  position: fixed;
+  bottom: 0%;
+  right: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 </style>

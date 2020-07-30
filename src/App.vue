@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" class="container-fluid px-0">
     <NavBar />
-    <Home />
+    <div class="row">
+      <div class="col">
+        <Home />
+      </div>
+    </div>
   </div>
 </template>
 
