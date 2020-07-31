@@ -1,26 +1,43 @@
 <template>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+      <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner bandar">
       <div class="carousel-item active">
         <img
-          class="d-block"
+          class="d-block w-60 m-auto"
           src="@/assets/carousel/pexels-simon-migaj-747470.jpg"
           alt="First slide"
         />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Red Jacket</h5>
+          <p>Simon Migaj from Pexels</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img
-          class="d-block w-100"
-          src="@/assets/carousel/pexels-simon-migaj-747470.jpg"
+          class="d-block w-60 m-auto"
+          src="@/assets/carousel/pexels-sindre-strøm-1040945.jpg"
           alt="Second slide"
         />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Blue Denim Jacket</h5>
+          <p>Sindre Strøm from Pexels</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img
-          class="d-block w-100"
-          src="@/assets/carousel/pexels-simon-migaj-747470.jpg"
+          class="d-block w-60 m-auto"
+          src="@/assets/carousel/pexels-lisa-fotios-1476055.jpg"
           alt="Third slide"
         />
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h5>Blue Top</h5>
+          <p>Photo by Anj Namoro from Pexels</p>
+        </div>
       </div>
     </div>
     <a
@@ -54,5 +71,10 @@ export default {}
 <style scoped>
 img {
   width: 60%;
+  /* max-height: 1000px; */
+}
+
+.bandar {
+  background-color: rgba(42, 37, 37, 0.548);
 }
 </style>
