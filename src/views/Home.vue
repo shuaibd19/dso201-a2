@@ -7,7 +7,12 @@
       <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
       <a href="#" class="email"><i class="fa fa-envelope"></i></a>
     </div>
-    <div class="carouselContainer"><Carousal /></div>
+    <div class="carouselContainer">
+      <div class="filter">
+        <a href="#" class="email"><i class="fa fa-filter"></i></a>
+      </div>
+      <Carousal />
+    </div>
     <a class="thanks" href="https://icons8.com/icon/83361/help"
       >Help icon by Icons8</a
     >
@@ -36,6 +41,28 @@ export default {
 
 /* Style the icon bar links */
 .icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 30px;
+}
+
+.filter a:hover {
+  background-color: #000;
+}
+
+.filter {
+  position: fixed;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.filter a {
   display: block;
   text-align: center;
   padding: 16px;
@@ -84,7 +111,7 @@ export default {
 
 .carouselContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 65vw;

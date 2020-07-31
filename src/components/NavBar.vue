@@ -2,6 +2,7 @@
   <div>
     <Keypress key-event="keyup" :key-code="72" @success="toggleModal" />
     <Keypress key-event="keyup" :key-code="27" @success="isOpen = false" />
+    <Keypress key-event="keyup" :key-code="83" @success="toggleSearch" />
     <nav class="navbar navbar-light justify-content-between nsg">
       <a @click="toggleModal" href="#" class="miz">
         <img src="https://img.icons8.com/material/50/000000/help--v2.png" />
@@ -28,27 +29,43 @@
       </form>
     </nav>
     <Modal v-if="isOpen" @close="isOpen = false" />
+    <SearchModal v-if="searchOpen" @close="searchOpen = false" />
   </div>
 </template>
 
 <script>
 import Accessability from '@/components/Accessability.vue'
 import Modal from '@/components/Modal.vue'
+import SearchModal from '@/components/SearchModal.vue'
 export default {
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      searchOpen: false
     }
   },
   components: {
     Accessability,
     Modal,
+    SearchModal,
     Keypress: () => import('vue-keypress')
   },
   methods: {
     toggleModal() {
+      if (this.searchOpen) {
+        this.searchOpen = !this.searchOpen
+      }
       this.isOpen = !this.isOpen
       console.log('Your pressed h!')
+    },
+    toggleSearch() {
+      if (this.isOpen) {
+        this.isOpen = !this.isOpen
+      }
+      this.searchOpen = !this.searchOpen
+      console.log('Your pressed s!')
+      // added functionality in the future includes allowing customer to type
+      // in the search area without triggering the global key press
     }
   }
 }

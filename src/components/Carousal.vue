@@ -1,7 +1,11 @@
 <template>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+      <li
+        data-target="#carouselExampleControls"
+        data-slide-to="0"
+        class="active"
+      ></li>
       <li data-target="#carouselExampleControls" data-slide-to="1"></li>
       <li data-target="#carouselExampleControls" data-slide-to="2"></li>
     </ol>
@@ -14,7 +18,7 @@
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>Red Jacket</h5>
-          <p>Simon Migaj from Pexels</p>
+          <p>Photo by Simon Migaj from Pexels</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -25,7 +29,7 @@
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>Blue Denim Jacket</h5>
-          <p>Sindre Strøm from Pexels</p>
+          <p>Photo by Sindre Strøm from Pexels</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -76,5 +80,12 @@ img {
 
 .bandar {
   background-color: rgba(42, 37, 37, 0.548);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
 }
 </style>
