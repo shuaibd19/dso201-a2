@@ -28,7 +28,36 @@
               <p>Email</p>
             </div>
           </div>
-          <div class="rght-column">right</div>
+          <div class="rght-column">
+            <div class="imageRow">
+              <img
+                src="@/assets/keyboard-shortcuts/d-right.png"
+                alt="swipe-right"
+              />
+              <p>Swipe Right</p>
+            </div>
+            <div class="imageRow">
+              <img
+                src="@/assets/keyboard-shortcuts/a-left.png"
+                alt="swipe-left"
+              />
+              <p>Swipe Left</p>
+            </div>
+            <div class="imageRow">
+              <img
+                src="@/assets/keyboard-shortcuts/n-decrease text size.png"
+                alt="decrease"
+              />
+              <p>Text Smaller</p>
+            </div>
+            <div class="imageRow">
+              <img
+                src="@/assets/keyboard-shortcuts/m-increase text size.png"
+                alt="increase"
+              />
+              <p>Text Bigger</p>
+            </div>
+          </div>
         </div>
       </div>
     </transition>
@@ -51,7 +80,7 @@ export default {}
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(148, 45, 45, 0.712);
+  background-color: rgba(80, 75, 75, 0.712);
   transition: opacity 0.3s ease;
 }
 
@@ -67,10 +96,12 @@ export default {}
   /* background-color: cadetblue; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
   width: 50%;
+  color: #5a3e10;
+  font-weight: bold;
+  padding: 5%;
 }
 
 .lft-column {

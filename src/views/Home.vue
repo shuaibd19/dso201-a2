@@ -7,9 +7,7 @@
       <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
       <a href="#" class="email"><i class="fa fa-envelope"></i></a>
     </div>
-    <!-- Modal -->
-    <!-- Button trigger modal -->
-
+    <div class="carouselContainer"><Carousal /></div>
     <a class="thanks" href="https://icons8.com/icon/83361/help"
       >Help icon by Icons8</a
     >
@@ -17,7 +15,12 @@
 </template>
 
 <script>
-export default {}
+import Carousal from '@/components/Carousal.vue'
+export default {
+  components: {
+    Carousal
+  }
+}
 </script>
 
 <style scoped>
@@ -77,5 +80,15 @@ export default {}
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65vw;
+  height: auto;
+  margin: auto;
 }
 </style>
