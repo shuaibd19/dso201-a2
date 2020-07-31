@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-5">
     <!-- The social media icon bar -->
     <div class="icon-bar">
       <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -9,21 +9,36 @@
     </div>
     <div class="carouselContainer">
       <div class="filter">
-        <a href="#" class="email"><i class="fa fa-filter"></i></a>
+        <a @click="toggleFilter" href="#" class="email"
+          ><i class="fa fa-filter"></i
+        ></a>
       </div>
       <Carousal />
     </div>
     <a class="thanks" href="https://icons8.com/icon/83361/help"
       >Help icon by Icons8</a
     >
+    <FilterModal v-if="filterOpen" @close="filterOpen = false" />
   </div>
 </template>
 
 <script>
 import Carousal from '@/components/Carousal.vue'
+import FilterModal from '@/components/FilterModal.vue'
 export default {
+  data() {
+    return {
+      filterOpen: false
+    }
+  },
   components: {
-    Carousal
+    Carousal,
+    FilterModal
+  },
+  methods: {
+    toggleFilter() {
+      this.filterOpen = !this.filterOpen
+    }
   }
 }
 </script>
